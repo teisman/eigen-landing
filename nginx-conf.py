@@ -19,8 +19,6 @@ def do_clear():
 def do_build():
     env = Environment(loader=PackageLoader(__name__, 'templates'))
     template = env.get_template('nginx.conf')
-    if not os.path.exists(PATH):
-        os.makedirs(PATH)
     for domain in DOMAINS:
         fpath = os.path.join(PATH, domain)
         with open(fpath, 'w') as f:
@@ -28,6 +26,8 @@ def do_build():
 
 if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1] == "build":
+        if not os.path.exists(PATH):
+            os.makedirs(PATH)
         do_clear()
         do_build()
     else:
