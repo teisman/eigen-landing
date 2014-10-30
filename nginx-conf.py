@@ -8,8 +8,8 @@ from domains import DOMAINS
 PATH = './sites-enabled/'
 
 def do_clear():
-    for fpath in os.listdir(FOLDER):
-        fpath = os.path.join(FOLDER, fpath)
+    for fpath in os.listdir(PATH):
+        fpath = os.path.join(PATH, fpath)
         try:
             if os.path.isfile(fpath):
                 os.unlink(fpath)
