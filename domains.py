@@ -1,4 +1,5 @@
-DOMAINS = ["eigenexchange.com"]
+DOMAINS = ["eigenexchange.com",
+           "eigenclearing.com"]
 
 #DOMAINS = ["eigenclearing.com",
 #           "eigencounter.com",
